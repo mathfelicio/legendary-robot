@@ -49,13 +49,25 @@
     <div class="searchable-container">
         <div class="items col-xs-12 ">
             <div class="info-block block-info ">
-                @foreach(pessoa in pessoa)
-                    <h5>Company Name</h5>
-                    <h4>Name: Tyreese Burn</h4>
-                    <p>Title: Manager</p>
-                    <span>Phone: 555-555-5555</span>
-                    <span>Email: sample@company.com</span>
+                @foreach($pessoas as $pessoa)
+                    <h5>Nome: {{$pessoa->name}}</h5>
+                    <h4>Sobrenome: {{$pessoa->surname}}</h4>
+                    <p>Email: {{$pessoa->email}}</p>
+                    <span>CPF: {{$pessoa->cpf}}</span>
+                    <span>Telefone: {{$pessoa->telephone}}</span>
+                    <form method="POST" action="/pessoa/{{$pessoa->id}}/edit" role="form">
+                        {{csrf_field()}}
+                        <inpute type="hidden" id="id" name="id" value="{{$pessoa->id}}"></inpute>
+                        <input type="submit" value="Editar Informações">
+                    </form>
+                    <form method="POST" action="/pessoa/destroy/{{$pessoa->id}}" role="form">
+                        {{csrf_field()}}
+                        <inpute type="hidden" id="id" name="id" value="{{$pessoa->id}}"></inpute>
+                        <input type="submit" class="btn btn-danger" value="Excluir Permanentemente">
+                    </form>
                 @endforeach
+
+                    <hr>
             </div>
         </div>
 
