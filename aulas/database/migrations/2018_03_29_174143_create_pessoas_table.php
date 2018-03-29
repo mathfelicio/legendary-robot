@@ -15,6 +15,11 @@ class CreatePessoasTable extends Migration
     {
         Schema::create('pessoas', function (Blueprint $table) {
             $table->increments('id');
+            $table->text('name');
+            $table->text('surname');
+            $table->text('email');
+            $table->integer('cpf');
+            $table->integer('telephone');
             $table->timestamps();
         });
     }
