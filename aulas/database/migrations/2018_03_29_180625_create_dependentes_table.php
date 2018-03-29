@@ -15,6 +15,7 @@ class CreateDependentesTable extends Migration
     {
         Schema::create('dependentes', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('pessoa_id')->nullable();
             $table->text('name');
             $table->date('birthday');
             $table->timestamps();

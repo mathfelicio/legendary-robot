@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Pessoa;
 
 class PessoaController extends Controller
 {
@@ -13,6 +13,7 @@ class PessoaController extends Controller
     
     public function store()
     {
-        
+        Pessoa::create(request(['name', 'surname', 'email', 'telephone', 'cpf']));
+        return redirect('/');
     }
 }

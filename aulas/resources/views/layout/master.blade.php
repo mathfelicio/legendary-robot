@@ -1,65 +1,67 @@
 @include('layout.header')
 
-    <div class="row row-offcanvas row-offcanvas-right">
 
-        <div class="col-12 col-md-9">
-            <p class="float-right hidden-md-up">
-                <button type="button" class="btn btn-primary btn-sm" data-toggle="offcanvas">Toggle nav</button>
-            </p>
-            <div class="jumbotron">
-                <h1>Hello, world!</h1>
-                <p>This is an example to show the potential of an offcanvas layout pattern in Bootstrap. Try some responsive-range viewport sizes to see it in action.</p>
+<div class="container">
+
+    <form method="POST" action="/pessoa/store" role="form" class="col-sm-8 go-right">
+
+        {{csrf_field()}}
+
+        <h2>Create Person</h2>
+
+        <div class="form-group">
+            <input id="name" name="name" type="text" class="form-control" >
+            <label for="name">Person Name</label>
+        </div>
+
+        <div class="form-group">
+            <input id="surname" name="surname" type="text" class="form-control" >
+            <label for="surname">Person Surname</label>
+        </div>
+
+        <div class="form-group">
+            <input id="email" name="email" type="text" class="form-control" >
+            <label for="body">Email</label>
+        </div>
+
+        <div class="form-group">
+            <input id="telephone" name="telephone" type="text" class="form-control" >
+            <label for="telephone">Telephone</label>
+        </div>
+
+        <div class="form-group">
+            <input id="cpf" name="cpf" type="text" class="form-control" >
+            <label for="cpf">CPF</label>
+        </div>
+
+
+        <div class="form-group col-sm-3 align-center">
+            <input type="submit" id="btn-login" class="btn btn-sm" value="Send">
+        </div>
+    </form>
+
+</div>
+
+
+<div class="container" style="margin: 30px 0px;">
+
+
+    <div class="searchable-container">
+        <div class="items col-xs-12 ">
+            <div class="info-block block-info ">
+                @foreach(pessoa in pessoa)
+                    <h5>Company Name</h5>
+                    <h4>Name: Tyreese Burn</h4>
+                    <p>Title: Manager</p>
+                    <span>Phone: 555-555-5555</span>
+                    <span>Email: sample@company.com</span>
+                @endforeach
             </div>
-            <div class="row">
-                <div class="col-6 col-lg-4">
-                    <h2>Heading</h2>
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                    <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-                </div><!--/span-->
-                <div class="col-6 col-lg-4">
-                    <h2>Heading</h2>
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                    <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-                </div><!--/span-->
-                <div class="col-6 col-lg-4">
-                    <h2>Heading</h2>
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                    <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-                </div><!--/span-->
-                <div class="col-6 col-lg-4">
-                    <h2>Heading</h2>
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                    <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-                </div><!--/span-->
-                <div class="col-6 col-lg-4">
-                    <h2>Heading</h2>
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                    <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-                </div><!--/span-->
-                <div class="col-6 col-lg-4">
-                    <h2>Heading</h2>
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                    <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-                </div><!--/span-->
-            </div><!--/row-->
-        </div><!--/span-->
+        </div>
 
-        <div class="col-6 col-md-3 sidebar-offcanvas" id="sidebar">
-            <div class="list-group">
-                <a href="#" class="list-group-item active">Link</a>
-                <a href="#" class="list-group-item">Link</a>
-                <a href="#" class="list-group-item">Link</a>
-                <a href="#" class="list-group-item">Link</a>
-                <a href="#" class="list-group-item">Link</a>
-                <a href="#" class="list-group-item">Link</a>
-                <a href="#" class="list-group-item">Link</a>
-                <a href="#" class="list-group-item">Link</a>
-                <a href="#" class="list-group-item">Link</a>
-                <a href="#" class="list-group-item">Link</a>
-            </div>
-        </div><!--/span-->
-    </div><!--/row-->
+    </div>
 
+</div>
     <hr>
 @include('layout.footer')
 

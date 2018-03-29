@@ -6,5 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Dependente extends Model
 {
-    //
+    public function pessoa()
+    {
+        return $this->belongsTo(Pessoa::class);
+    }
 }

@@ -2,4 +2,5 @@
 
 
 Route::get('/', 'PessoaController@index');
-Route::get('/pessoa/create', 'PessoaController@store');
+Route::get('/pessoa', 'PessoaController@index');
+Route::post('/pessoa/store', 'PessoaController@store');

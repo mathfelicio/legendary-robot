@@ -10,8 +10,7 @@
     <title>Off Canvas Template for Bootstrap</title>
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/offcanvas/">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-
-
+    <link href="{{ asset('css/fix.css') }}" rel="stylesheet" />
     <!-- Bootstrap core CSS -->
 
     <!-- Custom styles for this template -->

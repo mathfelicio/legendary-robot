@@ -18,7 +18,8 @@ class CreatePessoasTable extends Migration
             $table->text('name');
             $table->text('surname');
             $table->text('email');
-            $table->integer('cpf');
+            $table->integer('dependete_id')->nullable();
+            $table->bigInteger('cpf');
             $table->integer('telephone');
             $table->timestamps();
         });
